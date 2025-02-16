@@ -1,0 +1,10 @@
+Store templates in tmpl/ and page data in data/.
+First is create dirs, and modify some relationship:
+1, save method, add a "data/" before filename
+2, loadPage func is same to 1
+3, var templates, modify the Path to templates
+4, change every redirect to path thar add a "/data" perfix
+5, don't change renderTemplate func, because render func render something with them name
+6, change var validPath add "/data" before the REGE
+7, change URL path in main func add a prefix "/data"
+8, change path in templates also add "/data"

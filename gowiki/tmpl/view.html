@@ -1,0 +1,6 @@
+<!--{{.Title}}提示文件名，亦是 view/文件名 所指示的路径 -->
+<h1>{{.Title}}</h1>
+<!--<a href="/data/edit/{{.Title}}">跳转到编辑页面-->
+<p>[<a href="/data/edit/{{.Title}}">edit</a>]</p>
+<!--用于显示文件内容-->
+<div>{{printf "%s" .Body}}</div>
