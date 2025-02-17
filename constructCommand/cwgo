@@ -1,0 +1,28 @@
+About Backend Scaffold
+
+1.install cwgo tools
+GOPROXY=https://goproxy.cn/,direct go install github.com/cloudwego/cwgo@latest
+In Windows Powershall
+$env:GOPROXY="https://goproxy.cn/,direct"
+go install github.com/cloudwego/cwgo@latest
+
+2.install thrift IDL
+GO111MODULE=on go install github.com/cloudwego/thriftgo@latest
+In Windows Powershall
+$env:GO111MODULE="on"
+go install github.com/cloudwego/thriftgo@latest
+
+3.cwgo autocomplete(temporary)
+mkdir autocomplete
+cwgo completion powershell | Out-File autocomplete/cwgo.ps1
+& autocomplete/cwgo.ps1
+
+4.cwgo init thrift
+cwgo server --type RPC --module github.com/kair998/gomall/demo/demo_thrift --service demo_thrift --idl ../../idl/echo.thrift
+
+5.cwgo init protobuf
+cwgo server -I ../../idl --type RPC --module github.com/kair998/gomall/demo/demo_proto --service demo_proto --idl ../../idl/echo.proto
+
+Ex 1.path point
+$env:PATH="C:\protoc\bin;$env:PATH"
+protoc --version
